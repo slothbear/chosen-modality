@@ -8,7 +8,7 @@
   <div class="control-group">
     <%= f.label :modality, :class => 'control-label' %>
     <div class="controls">
-      <% f.collection_select :modality_id, Modality.all, :id, :name %>
+      <%= f.collection_select :modality_id, Modality.all, :id, :name %>
     </div>
   </div>
 
