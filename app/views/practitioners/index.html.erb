@@ -5,29 +5,19 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:modality) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @practitioners.each do |practitioner| %>
       <tr>
-        <td><%= link_to practitioner.id, practitioner_path(practitioner) %></td>
-        <td><%= practitioner.name %></td>
-        <td><%= practitioner.modality %></td>
-        <td><%=l practitioner.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_practitioner_path(practitioner), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      practitioner_path(practitioner),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+          <%= link_to practitioner.name,
+                      edit_practitioner_path(practitioner),
+                      :class => 'btn btn-link' %>
         </td>
+        <td><%= practitioner.modality %></td>
       </tr>
     <% end %>
   </tbody>
