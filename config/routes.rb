@@ -1,4 +1,7 @@
 ChosenModality::Application.routes.draw do
+  resources :modalities
+
+
   resources :practitioners
 
 
