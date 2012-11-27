@@ -7,13 +7,22 @@ This is a demonstration of two different styles of selecting a <b>Modality</b>. 
 
   <div class="row" style="background-color:lightgray; border-radius: 10px;">
     <br/>
-    <div class="span5">
+    <div id = "modality" class="span5">
+
       <p><b>Old Manual Method</b></p>
       <p>Only one choice is permitted. You may select from the given choices, or choose "other modality...". A new input field will appear and allow you to enter the new item.</p>
       <%= f.association :modality, :collection => Modality.with_other, :prompt => true %>
+
+      <div class="entry_section">
+        or other modality:
+        <%= f.text_field :modality_other %>
+      </div>
+      <br/>
+
     </div>
 
     <div class="span5">
+
       <p><b>New Chosen Method</b></p>
       <p>You may choose as many existing modalities as you like, and/or type in new ones.</p>
       <%= f.association :modalities, :collection => Modality.standard, :input_html => {:multiple => true} %>

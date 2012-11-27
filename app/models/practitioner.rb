@@ -17,7 +17,8 @@ class Practitioner < ActiveRecord::Base
     'Selma Kayak',
     ]
 
-  attr_accessible :modality_id, :name, :modality_ids
+  attr_accessible :modality_id, :name, :modality_ids, :modality_other
+  attr_accessor :modality_other
 
   belongs_to :modality
   has_many :treatments, :dependent => :destroy
