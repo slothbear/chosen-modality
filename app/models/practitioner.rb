@@ -29,7 +29,7 @@ class Practitioner < ActiveRecord::Base
 
   private
     def default_values
-      self.name = "Dr. #{NAMES.sample}"
+      self.name = name || "Dr. #{NAMES.sample}"
     end
 
 end
