@@ -8,6 +8,8 @@
   <dd><%= @practitioner.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:modality) %>:</strong></dt>
   <dd><%= @practitioner.modality %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:modality).pluralize %>:</strong></dt>
+  <dd><%= @practitioner.modalities.join(", ") %></dd>
 </dl>
 
 <div class="form-actions">
