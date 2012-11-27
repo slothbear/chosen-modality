@@ -8,6 +8,7 @@ gem 'simple_form'
 group :development do
   gem 'sqlite3'
   gem 'rails-footnotes', '>= 3.7.5.rc4'
+  gem 'quiet_assets'
 end
 
 # Gems used only for assets and not required
