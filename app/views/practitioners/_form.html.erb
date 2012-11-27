@@ -12,7 +12,7 @@
     <div class="span5">
       <p><b>Old Manual Method</b></p>
       <p>Only one choice is permitted. You may select from the given choices, or choose "other modality...". A new input field will appear and allow you to enter the new item.</p>
-      <%= f.association :modality, :collection => Modality.standard, :prompt => true %>
+      <%= f.association :modality, :collection => Modality.with_other, :prompt => true %>
     </div>
 
     <div class="span5">
