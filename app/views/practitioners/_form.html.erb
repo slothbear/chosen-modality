@@ -1,5 +1,16 @@
 <%= simple_form_for @practitioner, :html => { :class => 'form-horizontal' } do |f| %>
 
+<p>
+  This is a demonstration of two different styles of selecting an associated model: <b>Modality</b>. If your desired choice is not on the list, you may add it.
+</p>
+<p>
+  In the <em>Old Manual Method</em>, only one choice is permitted. You may choose from the standard list, or choose "Other modality...". A new input field will appear and allow you to enter the new item.
+</p>
+<p>
+  With the <em>New Chosen Method</em>, you may choose as many existing modalities as you like, or type in new ones.
+</p>
+<hr/>
+
   <%= f.input :name %>
 
   <div class="row" style="background-color:lightgray">
