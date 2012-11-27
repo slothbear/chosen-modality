@@ -5,5 +5,5 @@ class Practitioner < ActiveRecord::Base
   has_many :treatments, :dependent => :destroy
   has_many :modalities, :through => :treatments
 
-  validates_presence_of :name, :modality
+  validates_presence_of :name, :modality, :modalities
 end
