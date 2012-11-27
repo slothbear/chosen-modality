@@ -2,7 +2,7 @@ class ModalitiesController < ApplicationController
   # GET /modalities
   # GET /modalities.json
   def index
-    @modalities = Modality.all
+    @modalities = Modality.order("created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
