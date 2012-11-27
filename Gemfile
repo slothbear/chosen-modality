@@ -4,7 +4,6 @@ gem 'rails', '3.2.9'
 
 gem 'pg'
 gem 'simple_form'
-gem 'chosen-rails'
 
 group :development do
   gem 'sqlite3'
