@@ -32,6 +32,7 @@ class Practitioner < ActiveRecord::Base
   private
     def default_values
       self.name = name || "Dr. #{NAMES.sample}"
+      self.modality = modality || Modality.standard.sample
     end
 
     # FIX: Modality should be in charge of creating modalities, not us.
