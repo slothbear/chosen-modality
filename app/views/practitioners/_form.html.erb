@@ -25,7 +25,11 @@ This is a demonstration of two different styles of selecting a <b>Modality</b>. 
 
       <p><b>New Chosen Method</b></p>
       <p>You may choose as many existing modalities as you like, and/or type in new ones.</p>
-      <%= f.association :modalities, :collection => Modality.standard, :input_html => {:multiple => true} %>
+      <%= f.association :modalities, :collection => Modality.standard,
+        :input_html => {
+          "data-placeholder" => 'Select your modalities',
+          :multiple => true
+          } %>
     </div>
   </div>
 
