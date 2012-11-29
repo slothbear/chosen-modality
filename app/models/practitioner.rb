@@ -50,9 +50,7 @@ class Practitioner < ActiveRecord::Base
       return unless new_modalities.present?
 
       new_modalities.each do |modality_name|
-        if modality_name.present?
-          self.modalities << Modality.find_or_create_by_name(modality_name)
-        end
+        self.modalities << Modality.find_or_create_by_name(modality_name)
       end
     end
 
