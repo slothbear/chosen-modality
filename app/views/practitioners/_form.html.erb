@@ -11,7 +11,7 @@ This is a demonstration of two different styles of selecting <b>Modalities</b> f
 
       <p><b>Old Manual Method</b></p>
       <p>Only one choice is permitted. You may select from the given choices, or choose "other modality...". A new input field will appear and allow you to enter the new item.</p>
-      <%= f.association :modality, :collection => Modality.with_other, :prompt => true %>
+      <%= f.association :modality, :collection => Modality.standard, :prompt => true %>
 
       <div class="entry_section">
         or other modality:
@@ -26,7 +26,7 @@ This is a demonstration of two different styles of selecting <b>Modalities</b> f
       <p><b>New Chosen Method</b></p>
       <p>You may choose as many existing modalities as you like, and/or type in new ones.</p>
       <br/>
-      <%= f.association :modalities, :collection => Modality.all,
+      <%= f.association :modalities, :collection => Modality.standard,
         :input_html => {
           "data-placeholder" => 'Select your modalities',
           :multiple => true
