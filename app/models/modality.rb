@@ -8,4 +8,8 @@ class Modality < ActiveRecord::Base
     name
   end
 
+  def self.old_method
+    order(:name) << self.new(:name => "other modality...")
+  end
+
 end
