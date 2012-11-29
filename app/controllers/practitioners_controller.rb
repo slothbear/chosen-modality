@@ -41,7 +41,7 @@ class PractitionersController < ApplicationController
   # POST /practitioners.json
   def create
     # FIX: direct modification of params... not good.
-    Modality.isolate_new_modalities(params[:practitioner])
+    isolate_new_modalities(params[:practitioner])
     @practitioner = Practitioner.new(params[:practitioner])
 
     respond_to do |format|
@@ -59,8 +59,7 @@ class PractitionersController < ApplicationController
   # PUT /practitioners/1.json
   def update
     # FIX: direct modification of params... not good.
-    # DRY: copy of call in #create
-    Modality.isolate_new_modalities(params[:practitioner])
+    isolate_new_modalities(params[:practitioner])
     @practitioner = Practitioner.find(params[:id])
 
     respond_to do |format|
