@@ -33,7 +33,10 @@ The demo app deals with this mixed list by preprocessing the list at the start o
 When submitted, a before_save filter creates new choices for any items listed in the new_modalities text field.
 
 CodeMap of the pieces that make up the <b>New Chosen Method</b>:
-* model w/before_save: https://github.com/slothbear/chosen-modality/blob/master/app/models/practitioner.rb
+* model w/before_save:
+<a href="chosen-modality/blob/master/app/models/practitioner.rb">model</a>with before_save
+
+* model2:  https://github.com/slothbear/chosen-modality/blob/master/app/models/practitioner.rb
 * controller/create: https://github.com/slothbear/chosen-modality/blob/master/app/controllers/practitioners_controller.rb#L42
 * separating IDs and new strings: https://github.com/slothbear/chosen-modality/blob/master/app/controllers/application_controller.rb
 
