@@ -6,10 +6,10 @@ This application is also a demonstration of koenpunt's fork of Chosen, which all
 
 Upon creating a New Practitioner, you'll see two different methods for assigning the practitioner's <tt>modality</tt>.
 
-1. The Old Manual Method on the left allows selection without Chosen.
-2. The New Chosen Method on the right uses Chosen, including koenpunt's feature for enabling option adding.
+1. The Old Manual Method allows selection without Chosen.
+2. The New Chosen Method uses Chosen, including koenpunt's feature for enabling option adding.
 
-* live demo application: http://chosen-modality.herokuapp.com
+* Live app, see the methods in action: http://chosen-modality.herokuapp.com
 * the Chosen gem: http://harvesthq.github.com/chosen
 * koenpunt's fork to enable option adding: https://github.com/harvesthq/chosen/pull/166
 
@@ -24,29 +24,28 @@ When submitted, a before\_save filter creates a new choice in the database if th
 <b>Chosen</b> provides a drop-in replacement for the <tt>select</tt> field. A list of IDs selected is passed back to the controller.
 
 With koenpunt/chosen, the user may also type any number of new values into the field. The list passed to the controller contains IDs for existing values, and strings for newly-entered options:
-  ["47", "Sleep Therapy", "22", "Hot Yoga"]
+    ["47", "Sleep Therapy", "22", "Hot Yoga"]
 
 The demonstration application handles this mixed list by preprocessing the list at the start of the <tt>create</tt> and <tt>update</tt> controller actions.
 
 Strings are moved to a separate field (new\_modalities), IDs are left in the list. After ApplicationController#isolate\_new\_modalities:
 
 practitioner\_modality\_ids:
-  ["47", "22"]
+    ["47", "22"]
   
 new\_modalities:
-  ["Sleep Therapy", "Hot Yoga"]
+    ["Sleep Therapy", "Hot Yoga"]
 
 
 When submitted, a before\_save filter creates new choices for any items listed in the new_modalities text field.
 
-## CodeMap of the pieces that make up the <b>New Chosen Method</b>:
-
-* 
-<a href="chosen-modality/blob/master/app/models/practitioner.rb">model</a>
-with before_save
+## CodeMap of the <b>New Chosen Method</b>:
 
 <a href="https://github.com/slothbear/chosen-modality/blob/master/app/controllers/practitioners_controller.rb#L42">controller</a> create and update actions
 
 <a href="https://github.com/slothbear/chosen-modality/blob/master/app/controllers/application_controller.rb">isolate\_new\_modalities</a> and other helper methods.
+
+<a href="chosen-modality/blob/master/app/models/practitioner.rb">model</a>
+with before_save
 
 <a href="https://github.com/slothbear/chosen-modality/blob/master/app/assets/javascripts/practitioners.js.coffee">add Chosen to the select field</a>
