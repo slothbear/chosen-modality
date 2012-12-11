@@ -28,12 +28,12 @@ class Practitioner < ActiveRecord::Base
   validates_presence_of :name, :modality
   validates_presence_of :modalities, :unless => "new_modalities.present?"
 
-  after_initialize :default_values
+  after_initialize :random_default_values
   before_save :create_other_modality
   before_save :create_new_modalities
 
   private
-    def default_values
+    def random_default_values
       self.name = name || "Dr. #{NAMES.sample}"
       self.modality = modality || Modality.standard.sample
     end
