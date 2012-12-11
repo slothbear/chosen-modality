@@ -24,6 +24,7 @@ When submitted, a before\_save filter creates a new choice in the database if th
 <b>Chosen</b> provides a drop-in replacement for the <tt>select</tt> field. A list of IDs selected is passed back to the controller.
 
 With koenpunt/chosen, the user may also type any number of new values into the field. The list passed to the controller contains IDs for existing values, and strings for newly-entered options:
+
     ["47", "Sleep Therapy", "22", "Hot Yoga"]
 
 The demonstration application handles this mixed list by preprocessing the list at the start of the <tt>create</tt> and <tt>update</tt> controller actions.
@@ -31,9 +32,11 @@ The demonstration application handles this mixed list by preprocessing the list 
 Strings are moved to a separate field (new\_modalities), IDs are left in the list. After ApplicationController#isolate\_new\_modalities:
 
 practitioner\_modality\_ids:
+
     ["47", "22"]
   
 new\_modalities:
+
     ["Sleep Therapy", "Hot Yoga"]
 
 
