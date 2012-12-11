@@ -9,8 +9,8 @@ Upon creating a New Practitioner, you'll see two different methods of assigning 
 1. The Old Manual Method on the left allows selection without Chosen.
 2. The New Chosen Method on the right uses Chosen, including koenpunt's feature for enabling option adding.
 
-* live demo application: http://chosen-modality.herokuapp.com/
-* the Chosen gem: http://harvesthq.github.com/chosen/
+* live demo application: http://chosen-modality.herokuapp.com
+* the Chosen gem: http://harvesthq.github.com/chosen
 * koenpunt's fork to enable option adding: https://github.com/harvesthq/chosen/pull/166
 
 == Old Manual Method
@@ -26,15 +26,25 @@ http://railscasts.com/episodes/57-create-model-through-text-field
 <b>Chosen</b> provides a drop-in replacement for the <p>select</p> field. A list of IDs selected is passed back to the controller.
 
 With koenpunt/chosen, the user may type any number of new values into the field. The list passed to the controller contains IDs for existing values, and strings for newly-entered options:
-  [47, "Sleep Therapy", 22, "Hot Yoga"]
+  ["47", "Sleep Therapy", "22", "Hot Yoga"]
 
-The demo app deals with this mixed list by preprocessing the list at the start of the #create and #update controller actions. Strings are moved to a separate field (new_modalities), IDs are left in the list.
+The demo app deals with this mixed list by preprocessing the list at the start of the #create and #update controller actions.
 
-When submitted, a before_save filter creates new choices for any items listed in the new_modalities text field.
+Strings are moved to a separate field (new\_modalities), IDs are left in the list. After ApplicationController#isolate\_new\_modalities:
+
+practitioner\_modality\_ids:
+  ["47", "22"]
+  
+new\_modalities:
+  ["Sleep Therapy", "Hot Yoga"]
+
+
+When submitted, a before\_save filter creates new choices for any items listed in the new_modalities text field.
 
 CodeMap of the pieces that make up the <b>New Chosen Method</b>:
 * model w/before_save:
-<a href="chosen-modality/blob/master/app/models/practitioner.rb">model</a>with before_save
+<a href="chosen-modality/blob/master/app/models/practitioner.rb">model</a>
+with before_save
 
 * model2:  https://github.com/slothbear/chosen-modality/blob/master/app/models/practitioner.rb
 * controller/create: https://github.com/slothbear/chosen-modality/blob/master/app/controllers/practitioners_controller.rb#L42
