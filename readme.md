@@ -23,7 +23,7 @@ When submitted, a <tt>before\_save</tt> filter creates a new choice in the datab
 
 *Chosen* provides a drop-in replacement for the <tt>select</tt> field. A list of IDs selected is passed back to the controller.
 
-With *koenpunt/chosen*, the user may also type any number of new values into the field. The list passed to the controller contains IDs for existing values, and strings for newly-entered options:
+With *koenpunt/chosen*, the user may also type new values into the field. The list passed to the controller contains IDs for existing values, and strings for newly-entered options:
 
     ["47", "Sleep Therapy", "22", "Hot Yoga"]
 
