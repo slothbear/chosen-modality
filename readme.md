@@ -12,6 +12,7 @@ Upon creating a New Practitioner, there are two different methods for assigning 
 * Play with these methods in the live application: http://chosen-modality.herokuapp.com
 * Chosen gem: http://harvesthq.github.com/chosen
 * koenpunt's fork to enable option adding: https://github.com/harvesthq/chosen/pull/166
+* Read some discussion of integrating with Rails at the Boston Ruby Group: https://groups.google.com/forum/?fromgroups=#!topic/boston-rubygroup/jX-LmjMUf1A
 
 ## Old Manual Method
 
